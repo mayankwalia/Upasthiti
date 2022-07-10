@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add Member
+{% endblock title %}
+
+
+
+{% block body %}
+
+<form action="/">
+    <div class="container">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" required>
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName">
+        <label for="memberType">Member Type</label>
+        <select name="memberType" id="memberType" required>Member type
+            <option value="" disabled selected>Select</option>
+            <option value="STD">Student</option>
+            <option value="FAC">Faculty</option>
+            <option value="SFF">Staff</option>
+            <option value="ADM">Admin</option>
+        </select>
+        <label for="sap" required>SAP ID</label>
+        <input type="number" name="sap" id="sap">
+        <label for="phone">Phone Number</label>
+        <input type="number" name="phone" id="phone">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<form action="/multiple">
+
+    <div class="container">
+        <p>Create multiple accounts at once.</p>
+        <label for="memberType">Member Type of the file data</label>
+        <select name="memberType" id="memberType" required>
+            <option value="" disabled selected>Select</option>
+            <option value="STD">Student</option>
+            <option value="FAC">Faculty</option>
+            <option value="SFF">Staff</option>
+            <option value="ADM">Admin</option>
+        </select>
+        <input type="file" name="file" id="file">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+{% endblock body %}
